@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+
+    <style>
+        @font-face {
+        font-family: 'KyoboHand';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        }
+        @font-face {
+        font-family: 'HakgyoansimPuzzleTTF-Outline';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-5@1.0/HakgyoansimPuzzleTTF-Outline.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+        }
+        @font-face {
+        font-family: 'SDSamliphopangche_Outline';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        }
+        html,body{
+            height: 100%;
+        }
+        *:not(#button){
+            /* border: 1px solid blue; */
+            font-family: 'KyoboHand';
+            background-color: rgb(231, 244, 249);  
+        }
+        #button {
+            display: flex;
+            position: fixed;  
+            flex-direction: row;
+            z-index: 1;
+            bottom: 0;
+            right: 0;
+        }
+        #button a {
+            color: rgb(152, 218, 250);
+            text-decoration: none;
+            font-size: 30px;
+            background-color: rgb(232, 246, 247);
+            margin-right: 50px;
+            border-radius: 30px;
+            border: 2px solid rgb(124, 156, 244);
+            margin-bottom: 25px;
+            transition: all 0.3s ease-in-out;
+            padding: 10px 20px;
+        }
+        #button1:hover, #button2:hover, #button3:hover {
+            transform: scale(1.3); /* 크기 20% 증가 */
+            background-color: rgb(108, 210, 244);
+            font-weight: 800;
+            color: rgb(38, 38, 150);
+            cursor: pointer;
+        }
+        #about{
+            font-size: 100px;
+            color: rgb(152, 218, 250);
+            margin-bottom: 5%;
+            margin-top: 5%;
+        }
+        .abouta-container{
+            list-style-type: none;
+            font-size: 50px;
+            position: relative;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        li>pre{
+            margin-top: 0;
+            margin-bottom: 5%;
+        }
+        .about-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+        }
+        .header-container{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+        .header-container>div:last-child{
+            margin-left: 3%;
+        } 
+        .header-container>div>h3{
+            font-size: 80px;
+            font-weight: 800;
+            margin-bottom: 5%;
+            margin-top: 0;
+        }
+        .header-container>div>span{
+            font-size: 70px;
+            font-weight: 800;
+        }
+        #name{
+            text-shadow: 2px 2px 4px rgb(0, 110, 255);
+        }
+        #sin{
+            /* font-family: 'HakgyoansimPuzzleTTF-Outline'; */
+            font-family: 'SDSamliphopangche_Outline';
+            font-size: 70px;
+            text-shadow: 2px 2px 4px rgb(255, 255, 255);
+            color: rgb(152, 218, 250);
+        }
+        .abouta-container a{
+            text-decoration: none;
+            color: black;
+        }
+        .merit-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100%;
+        }
+        .popup-checkbox {
+            display: none;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+        .popup-checkbox:checked ~ .popup {
+            display: block;
+        }
+        .popup-content {
+            position: absolute;
+            top: 0%;
+            left: 25%;
+            max-width: 700px;
+            background-color: white;
+            border-radius: 12px;
+            overflow-y: auto;
+        }
+        .popup-content img {
+            width: 100%;
+            height: auto; 
+        }
+        .close {
+            position: absolute;
+            top: 16px;
+            right: 41px;
+            font-size: 50px;
+            font-family: "고딕" !important;
+            font-weight: bold;
+            cursor: pointer;
+            color: #fa0202;
+            background-color: transparent !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="button">
+        <a id="button1" href="#header-container">&nbsp;Main&nbsp;</a>
+        <a id="button2" href="#about-container">&nbsp;About&nbsp;</a>
+        <a id="button3" href="#merit-container">&nbsp;merit&nbsp;</a>
+    </div>
+    <div class="header-container" id="header-container">
+        <div>
+            <img src="./javascript/images/web-programming_9953995.png" width="500" height="500" alt="캐릭터">
+        </div>
+        <div>
+            <h3>안녕하세요 👐🏻</h3>
+            <span id="sin">개발신생아 </span><span id="name">이난희</span><span>입니다.<br></span>
+            <span>제 목표는</span>
+            <span id="sin">꼴지하지 않기</span>
+            <span>입니다.</span>
+        </div>
+    </div>
+    <div class="about-container" id="about-container">
+        <h3 id="about">About</h3>
+        <ul class="abouta-container">
+            <li><pre>이름              이난희</pre></li>
+            <li><pre>생년월일        <a href="https://superkts.com/cal/man_age/19980622">1998.06.22</a></pre></li>
+            <li><pre>거주지          <a href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%EC%8B%9C%20%EC%96%91%EC%B
+                %9C%EA%B5%AC/address/14122729.9860925,4511419.2677485,%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%9
+                6%91%EC%B2%9C%EA%B5%AC,jibun?c=12.00,0,0,0,dh&isCorrectAnswer=true">서울시 양천구</a></li>
+            <li><pre>취미             <a href="https://www.instagram.com/theclimb_life/">클라이밍</a></pre></li>
+            <li><pre>MBTI          <a href="https://www.16personalities.com/ko/%EC%84%B1%EA%B2%A9%EC%9C%A0%ED%98%95-isfp">ISFP</a></pre></li>
+        </ul>
+    </div> 
+    <div class="merit-container" id="merit-container">
+        <div>
+            <input type="checkbox" id="popup-toggle-1" class="popup-checkbox">
+            <label for="popup-toggle-1">
+                <img src="./javascript/images/partnership-handshake_9371217.png" width="500" height="500" alt="장점1 썸네일">
+            </label>
+            <div class="popup">
+                <div class="popup-content">
+                    <label for="popup-toggle-1" class="close">&times;</label>
+                    <img src="./javascript/images/장점1.jpg" alt="장점 1 내용 이미지">
+                </div>
+            </div>
+        </div>
+        <div>
+            <input type="checkbox" id="popup-toggle-2" class="popup-checkbox">
+            <label for="popup-toggle-2">
+                    <img src="./javascript/images/question_9192130.png" width="500" height="500" alt="장점2 썸네일">
+                </label>
+                <div class="popup">
+                    <div class="popup-content">
+                    <label for="popup-toggle-2" class="close">&times;</label>
+                    <img src="./javascript/images/장점2.jpg" alt="장점 2 내용 이미지">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
